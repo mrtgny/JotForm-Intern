@@ -1,0 +1,157 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header-container {
+    width: calc(100% - 32px);
+    height: 70px;
+    background-color: #001529;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.header-form-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-user-info {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.centered-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    width: calc(100% - 32px);
+    padding: 16px;
+    background-color: #f4f4f4;
+    min-height: calc(100vh - 134px)
+}
+
+.commandbar-container {
+    width: calc(100% - 32px);
+    background-color: #e8e8e8;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.search-box {
+    width: 164px;
+    padding: 8px 36px 8px 8px;
+    border: 1px solid #eee
+}
+
+.search-box:focus {
+    outline: 1px solid #aaa
+}
+
+.search-box-container {
+    position: relative;
+}
+
+.search-box-icon {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    color: #595959;
+}
+
+.commandbar-button {
+    margin: 0 8px;
+    height: 100%;
+    font-size: 12px;
+    display: flex;
+    padding: 0 8px;
+    color: #666666;
+    transition: 0.4s;
+    align-items: center;
+}
+
+.commandbar-button:hover {
+    background-color: #d9d9d9;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.commandbar-button-badge {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    color: white;
+    border-radius: 50%
+}
+
+.commandbar-button-icon-container {
+    color: black;
+}
+
+.commandbar-button-icon {
+    font-size: 20px;
+}
+
+.loading-item {
+    width: 200px;
+    height: 200px;
+    animation: loading-animation 1s infinite backwards;
+    background-color: red;
+    border-radius: 50%
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+
+.yin-yang {
+	width: 96px;
+	height: 48px;
+	background: #eee;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px 2px 50px 2px;
+	border-radius: 100%;
+    position: relative;
+    animation: loading-animation 1s infinite
+}
+
+.yin-yang:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background: #eee;
+	border: 18px solid black;
+	border-radius: 100%;
+	width: 12px;
+	height: 12px;
+}
+
+.yin-yang:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: black;
+	border: 18px solid #eee;
+	border-radius:100%;
+	width: 12px;
+	height: 12px;
+}

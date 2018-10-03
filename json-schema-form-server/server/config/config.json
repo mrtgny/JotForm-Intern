@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "io1ta234",
+    "database": "jsf_dev",
+    "schema":"jsf",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "io1ta234",
+    "database": "jsf_dev",
+    "schema":"jsf",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "io1ta234",
+    "database": "jsf_dev",
+    "schema":"jsf",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

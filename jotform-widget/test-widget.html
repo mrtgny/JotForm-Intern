@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
+</head>
+
+<body>
+    <iframe src="file:///Users/muratguney/Desktop/jotform-widget/deneme.html" frameborder="1"></iframe>
+    <div id="main">
+        <h3>This is my first widget.</h3>
+        <span id="labelText"></span>
+        <input type="text" id="userInput">
+    </div>
+    <script type="text/javascript">
+        const APIKEY = "e38f97d7eb1d7cd322fcd9a66fddec33"
+        const formId = "81683699123972";
+        let counter = 0;
+        JFCustomWidget.subscribe("ready",(function () {
+            var fieldUniqueId = JFCustomWidget.getWidgetSetting('FieldUniqueId') || "sex";
+            var CountOf = JFCustomWidget.getWidgetSetting('CountOf') || "Male";
+            var targetElem = document.getElementById(fieldUniqueId)
+            if (targetElem && targetElem.value == CountOf)
+                counter++
+            fetch("https://api.jotform.com/form/" + formId + "/submissions?apiKey=" + APIKEY, {
+                method: "GET",
+
+            }).then((response) => response.json()).then(i => {
+                i.content.forEach((_answer) => {
+                    const answers = _answer.answers
+                    Object.keys(answers).forEach(i2 => {
+                        const answer = answers[i2];
+                        if (fieldUniqueId == answer.name)
+                            if (answer.answer == CountOf)
+                                counter++;
+                    })
+                })
+            });
+            var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+            document.getElementById('labelText').innerHTML = label || "";
+            JFCustomWidget.subscribe("submit", function () {
+                var msg = {
+                    valid: true,
+                    value: counter
+                }
+                JFCustomWidget.sendSubmit(msg);
+            });
+        })());
+    </script>
+</body>
+
+</html>

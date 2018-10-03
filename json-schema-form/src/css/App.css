@@ -1,0 +1,38 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  color: white;
+  font-size: 24;
+  font-weight: bold;
+  margin: 16px;
+}
+
+.centered-item {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box{
+  padding-top: 0;
+}
+.ant-collapse-content > .ant-collapse-content-box {
+  padding: 0 0 0 16px;
+}
+
+.hover-list-item:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
